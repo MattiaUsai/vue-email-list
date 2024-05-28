@@ -7,6 +7,7 @@
 </head>
 <body>
     <div id="app">
+        <!-- SE LA LUNGHEZZA DELL'ARRAY È UGUALE A 10 ALLORA MOSTRA LE EMAIL -->
         <ul v-if="listEmail.length === 10" >
             <li v-for="email in listEmail">{{email.response}}</li>
         </ul>
