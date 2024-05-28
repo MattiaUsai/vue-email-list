@@ -9,8 +9,9 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            listemail:[],
+            listEmail:[],
             objemail:{},
+            url:'https://flynn.boolean.careers/exercises/api/random/mail'
 
             
            
@@ -19,24 +20,41 @@ createApp({
         }
     },
     methods:{
-        axiosGetEmail(){
+        callApi(){
+            axios.get(this.url).then((response)=> {
+                
+                this.listEmail.push(response.data)
             
-            
-            
-        
+            })
+
         }
+        
+        
      
     },
     mounted(){
+
+
         
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then ((response) => {
-                
-                const result = response.data
-                this.objemail = result
-                this.listemail.push(this.objemail)
+
+        for (let i = 0; i < 10; i++) {
+            this.callApi()
+            console.log(this.listEmail) ;
+          }
+        
+        
+        
+        
+        
             
             
-            })
+        
+            
+            
+        
+        
+            
+        
         
         
         
