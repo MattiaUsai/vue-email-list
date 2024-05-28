@@ -11,7 +11,8 @@ createApp({
         return{
             listEmail:[],
             objemail:{},
-            url:'https://flynn.boolean.careers/exercises/api/random/mail'
+            url:'https://flynn.boolean.careers/exercises/api/random/mail',
+            
 
             
            
@@ -27,7 +28,14 @@ createApp({
             
             })
 
+        },
+        completeEmail(){
+            this.listEmail.map((element)=>{
+                element
+            })
+
         }
+
         
         
      
